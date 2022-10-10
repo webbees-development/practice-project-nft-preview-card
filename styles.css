@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* reset basic styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* variables */
+:root {
+    --clr-primary: rgb(139, 172, 218);
+    --clr-secondary: hsl(178, 100%, 50%);
+    --clr-active-img-bg: rgba(0, 255, 247, 0.4);
+
+    --clr-main-bg: hsl(217, 54%, 11%);
+    --clr-card-bg: hsl(216, 50%, 16%);
+    --clr-line: hsl(215, 32%, 27%);
+    --clr-white: hsl(0, 0%, 100%);
+}
+
+/* styles */
+body {
+    font-size: 18px;
+
+    background-color: var(--clr-main-bg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+
+    color: var(--clr-white);
+
+    margin-block-end: 1rem;
+
+    cursor: pointer;
+    transition: all 50ms ease-out;
+}
+
+h1:hover,
+h1:focus-visible {
+    color: var(--clr-secondary);
+}
+
+h1:focus-visible {
+    outline: none;
+}
+
+hr {
+    height: 1px;
+    background-color: var(--clr-line);
+    border: none;
+
+    margin-block-end: 1rem;
+}
+
+main {
+    margin: 1.5rem;
+}
+
+p {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+p > img {
+    vertical-align: text-bottom;
+}
+
+.card {
+    background-color: var(--clr-card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+
+    max-width: 22rem;
+}
+
+.card-main-image {
+    display: block;
+    max-width: 100%;
+}
+
+.card-main-image-container {
+    position: relative;
+
+    display: block;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    margin-block-end: 1.5rem;
+
+    cursor: pointer;
+    transition: all 50ms ease-out;
+}
+
+.card-main-image-container::before {
+    transition: all 1000ms ease-out;
+}
+
+.card-main-image-container:hover::before,
+.card-main-image-container:focus-visible::before {
+    content: "";
+    background-image: url("./images/icon-view.svg");
+    background-color: var(--clr-active-img-bg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius:0.5rem;
+
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+}
+
+.card-main-image-container:focus-visible {
+    outline: none;
+}
+
+.author,
+.description,
+.time {
+    font-weight: 300;
+
+    color: var(--clr-primary);
+}
+
+.author > img {
+    --item-width: 2rem;
+
+    max-width: var(--item-width);
+    border: solid 1px var(--clr-white);
+    border-radius: calc(var(--item-width) / 2);
+
+    vertical-align: middle;
+
+    margin-inline-end: 0.8rem;
+}
+
+.author-name {
+    color: var(--clr-white);
+
+    cursor: pointer;
+    transition: all 50ms ease-out;
+}
+
+.author-name:hover,
+.author-name:focus-visible {
+    color: var(--clr-secondary);
+}
+
+.author-name:focus-visible {
+    outline: none;
+}
+
+.description {
+    margin-block-end: 1rem;
+}
+
+.eth {
+    font-weight: 600;
+
+    color: var(--clr-secondary);
+}
+
+.meta-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-block-end: 0.8rem;
+}
+
+.meta-info p > img {
+    margin-inline-end: 4px;
+}
+
+@media (min-width: 30rem) {
+    p.description {
+        font-size: 18px;
+    }
+}
